@@ -6,7 +6,7 @@ export default async (req, context) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": "Bearer TA_CLE_OPENAI_ICI"
+        "Authorization": "Bearer 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"
       },
       body: JSON.stringify({
         model: "gpt-4",
