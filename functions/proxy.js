@@ -22,10 +22,13 @@ export default async (req, context) => {
     });
 
     const data = await response.json();
-    return new Response(JSON.stringify({ reply: data.choices?.[0]?.message?.content }), {
+
+    // 🛠️ DEBUG : on renvoie tout le JSON brut pour voir ce qu'OpenAI dit vraiment
+    return new Response(JSON.stringify({ debug: data }), {
       status: 200,
       headers: { "Content-Type": "application/json" }
     });
+
   } catch (error) {
     return new Response(JSON.stringify({ error: error.message }), {
       status: 500,
